@@ -24,11 +24,7 @@ phases:
       - echo Building Lambda with SAM...
       - sam build
       - echo Packaging Lambda...
-      - sam package \
-        --template-file .aws-sam/build/template.yaml \
-        --s3-bucket $ARTIFACT_BUCKET \
-        --output-template-file $PACKAGED_TEMPLATE \
-        --region $REGION
+      - sam package --template-file .aws-sam/build/template.yaml --s3-bucket $ARTIFACT_BUCKET --output-template-file $PACKAGED_TEMPLATE --region $REGION
 artifacts:
   files:
     - $PACKAGED_TEMPLATE
